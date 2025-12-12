@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>🗑️ Supprimer la Conférence</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9d6d5, #f8b4b4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .confirm-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            color: #e53935;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            border: none;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel {
+            background: #66bb6a;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background: #43a047;
+        }
+
+        .btn-delete {
+            background: #e53935;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirm-container">
+        <h2>🗑️ Supprimer la Conférence</h2>
+        <p>⚠️ Êtes-vous sûr(e) de vouloir supprimer la conférence : <strong>{{ object.name }}</strong> ?</p>
+
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-delete">Oui, supprimer</button>
+        </form>
+
+        <a href="{% url 'conference_list' %}" class="btn btn-cancel">Annuler</a>
+    </div>
+</body>
+</html>

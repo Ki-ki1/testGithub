@@ -1,0 +1,10 @@
+<h2>Liste des sessions</h2>
+    <ul>
+        {% for session in sessions %}
+            <li>
+                {{ session.title }} — {{ session.speaker }} — {{ session.start_time|date:"H:i" }} à {{ session.end_time|date:"H:i" }} — {{ session.location }}
+            </li>
+        {% empty %}
+            <li>Aucune session disponible.</li>
+        {% endfor %}
+    </ul>

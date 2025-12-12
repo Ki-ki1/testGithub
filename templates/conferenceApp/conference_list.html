@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block title %}Conference List{% endblock %}
+{% block content %}
+<h2> List of Conferences </h2>
+<ul>
+{% for conference in conferences %}
+    <li>{{ conference.name }} - {{ conference.location }}
+        <br>
+        <a href="{% url 'conference_detailLV' conference.pk %}"> Details </a>
+        {# Add link to conference details page  #}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
