@@ -1,4 +1,4 @@
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 # Create an instance of FastMCP 
 # All parameters are optional 
 mcp = FastMCP( 
